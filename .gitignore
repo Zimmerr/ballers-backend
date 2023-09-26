@@ -1,0 +1,7 @@
+.idea/
+db.sqlite3
+*.pyc
+.env
+.python-version
+.pytest_cache/
+
