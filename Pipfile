@@ -11,6 +11,8 @@ djoser = "*"
 social-auth-app-django = "*"
 django-cors-headers = "*"
 python-decouple = "*"
+flake8 = "*"
+isort = "*"
 
 [dev-packages]
 
