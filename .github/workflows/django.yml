@@ -26,6 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install --user pipenv
         pipenv install --dev
+    - name: Run Code Checks
+      run: |
+        flake8
+        isort --check-only .  
     # - name: Run Tests
     #   run: |
     #     pipenv run pytest
