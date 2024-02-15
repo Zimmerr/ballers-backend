@@ -6,7 +6,8 @@ from ..serializers.jogador import JogadorSerializer
 
 
 class JogadorViewSet(viewsets.ModelViewSet):
-    queryset = Jogador.objects.all()
+    lookup_field = "uuid"
+    queryset = Jogador.objects.filter(ativo=True)
     serializer_class = JogadorSerializer
     permission_classes = [permissions.IsAuthenticated]
 

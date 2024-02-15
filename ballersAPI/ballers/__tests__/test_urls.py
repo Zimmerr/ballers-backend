@@ -27,7 +27,7 @@ def test_url_get_jogador(
 
     x = jogador_factory.create(nome='Roberto')
 
-    response = client.get(f'/jogadores/{x.id}/')
+    response = client.get(f'/jogadores/{x.uuid}/')
 
     assert response.status_code == status.HTTP_200_OK
     assert response.json()['nome'] == "Roberto"
@@ -67,7 +67,7 @@ def test_url_put_jogador(
         "altura": 175
     }
 
-    response = client.put(f'/jogadores/{x.id}/', payload)
+    response = client.put(f'/jogadores/{x.uuid}/', payload)
 
     assert response.status_code == status.HTTP_200_OK
     assert Jogador.objects.get(nome="Roberto da Silva")
@@ -81,7 +81,7 @@ def test_url_delete_jogador(
 
     x = jogador_factory.create(nome='Roberto')
 
-    response = client.delete(f'/jogadores/{x.id}/')
+    response = client.delete(f'/jogadores/{x.uuid}/')
 
     assert response.status_code == status.HTTP_200_OK
     assert Jogador.objects.count() == 1
