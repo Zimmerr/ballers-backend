@@ -3,9 +3,10 @@ from decouple import config
 from pytest_factoryboy import register
 from rest_framework.test import APIClient
 
-from ..fixtures.factories.jogador_factory import JogadorFactory
+from ..fixtures.factories.ballers_factory import JogadorFactory, TimeFactory
 
 register(JogadorFactory)
+register(TimeFactory)
 
 
 @pytest.fixture
