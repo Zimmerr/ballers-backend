@@ -6,8 +6,8 @@ from .jogador import Jogador
 
 class Time(ModeloBase):
     nome = models.CharField("Nome", max_length=150)
-    abreviacao = models.CharField("Nome", max_length=3)
-    apelido = models.CharField("Nome", max_length=30)
+    abreviacao = models.CharField("Abreviação", max_length=3)
+    apelido = models.CharField("Apelido", max_length=30)
     jogadores = models.ManyToManyField(Jogador)
 
     def __str__(self):
