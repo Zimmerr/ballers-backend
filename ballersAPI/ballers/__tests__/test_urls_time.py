@@ -27,8 +27,6 @@ def test_url_get_time(
 
     x = time_factory.create(nome='Palmeiras')
 
-    print(x.jogadores.all())
-
     response = client.get(f'/times/{x.uuid}/')
 
     assert response.status_code == status.HTTP_200_OK
@@ -53,9 +51,6 @@ def test_url_post_time(
     }
 
     response = client.post('/times/', payload)
-
-    print(payload)
-    print(vars(response))
 
     assert response.status_code == status.HTTP_201_CREATED
     assert Time.objects.count() == 1
