@@ -1,6 +1,7 @@
 from factory import DjangoModelFactory, Sequence, post_generation
 from faker import Faker
 
+from ballersAPI.ballers.models.campeonato import Campeonato
 from ballersAPI.ballers.models.jogador import Jogador
 from ballersAPI.ballers.models.time import Time
 
@@ -34,3 +35,21 @@ class TimeFactory(DjangoModelFactory):
             self.jogadores.set(JogadorFactory.create_batch(size=5))
         else:
             self.jogadores.add(*extracted)
+
+
+class CampeonatoFactory(DjangoModelFactory):
+    class Meta:
+        model = Campeonato
+
+    nome = Sequence(lambda n: f"{fake.unique.name()}")
+    descricao = Sequence(lambda n: fake.unique.pystr(min_chars=1, max_chars=1000))
+
+    @post_generation
+    def groups(self, create, extracted, **kwargs):
+        if not create:
+            return
+
+        if not extracted:
+            self.times.set(TimeFactory.create_batch(size=5))
+        else:
+            self.times.add(*extracted)
