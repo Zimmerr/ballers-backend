@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from .models.campeonato import Campeonato
 from .models.jogador import Jogador
 from .models.time import Time
 
@@ -12,3 +13,8 @@ class JogadorAdmin(admin.ModelAdmin):
 @admin.register(Time)
 class TimeAdmin(admin.ModelAdmin):
     list_display = ['nome', 'abreviacao', 'criado_em']
+
+
+@admin.register(Campeonato)
+class CampeonatoAdmin(admin.ModelAdmin):
+    list_display = ['nome']
