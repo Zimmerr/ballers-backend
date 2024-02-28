@@ -4,11 +4,15 @@ from pytest_factoryboy import register
 from rest_framework.test import APIClient
 
 from ..fixtures.factories.ballers_factory import (CampeonatoFactory,
-                                                  JogadorFactory, TimeFactory)
+                                                  HorarioFactory,
+                                                  JogadorFactory,
+                                                  QuadraFactory, TimeFactory)
 
 register(JogadorFactory)
 register(TimeFactory)
 register(CampeonatoFactory)
+register(QuadraFactory)
+register(HorarioFactory)
 
 
 @pytest.fixture
