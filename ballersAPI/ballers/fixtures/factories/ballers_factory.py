@@ -3,6 +3,7 @@ from faker import Faker
 
 from ballersAPI.ballers.models.campeonato import Campeonato
 from ballersAPI.ballers.models.jogador import Jogador
+from ballersAPI.ballers.models.quadras import Horario, Quadra
 from ballersAPI.ballers.models.time import Time
 
 fake = Faker("pt_BR")
@@ -53,3 +54,17 @@ class CampeonatoFactory(DjangoModelFactory):
             self.times.set(TimeFactory.create_batch(size=5))
         else:
             self.times.add(*extracted)
+
+
+class QuadraFactory(DjangoModelFactory):
+    class Meta:
+        model = Quadra
+
+    nome = Sequence(lambda n: f"{fake.unique.name()}")
+
+
+class HorarioFactory(DjangoModelFactory):
+    class Meta:
+        model = Horario
+
+    hora = Sequence(lambda n: f"{fake.time()}")
