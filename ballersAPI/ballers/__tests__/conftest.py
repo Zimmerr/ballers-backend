@@ -6,6 +6,7 @@ from rest_framework.test import APIClient
 from ..fixtures.factories.ballers_factory import (CampeonatoFactory,
                                                   HorarioFactory,
                                                   JogadorFactory,
+                                                  PartidaFactory,
                                                   QuadraFactory, TimeFactory)
 
 register(JogadorFactory)
@@ -13,6 +14,7 @@ register(TimeFactory)
 register(CampeonatoFactory)
 register(QuadraFactory)
 register(HorarioFactory)
+register(PartidaFactory)
 
 
 @pytest.fixture

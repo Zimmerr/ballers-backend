@@ -1,8 +1,9 @@
-from factory import DjangoModelFactory, Sequence, post_generation
+from factory import DjangoModelFactory, Sequence, SubFactory, post_generation
 from faker import Faker
 
 from ballersAPI.ballers.models.campeonato import Campeonato
 from ballersAPI.ballers.models.jogador import Jogador
+from ballersAPI.ballers.models.partida import Partida
 from ballersAPI.ballers.models.quadras import Horario, Quadra
 from ballersAPI.ballers.models.time import Time
 
@@ -68,3 +69,16 @@ class HorarioFactory(DjangoModelFactory):
         model = Horario
 
     hora = Sequence(lambda n: f"{fake.time()}")
+
+
+class PartidaFactory(DjangoModelFactory):
+    class Meta:
+        model = Partida
+
+    time_casa = SubFactory(TimeFactory)
+    time_fora = SubFactory(TimeFactory)
+    campeonato = SubFactory(CampeonatoFactory)
+
+    data = Sequence(lambda n: fake.date(pattern="%Y-%m-%d"))
+    horario = SubFactory(HorarioFactory)
+    quadra = SubFactory(QuadraFactory)
