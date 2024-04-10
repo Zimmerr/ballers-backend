@@ -10,6 +10,8 @@ class QuadraSerializer(serializers.ModelSerializer):
 
 
 class HorarioSerializer(serializers.ModelSerializer):
+    hora = serializers.TimeField(format="%H:%M")
+
     class Meta:
         model = Horario
         exclude = ("id",)
