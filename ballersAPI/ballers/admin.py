@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models.campeonato import Campeonato
 from .models.jogador import Jogador
+from .models.partida import Partida
 from .models.quadras import Horario, Quadra
 from .models.time import Time
 
@@ -29,3 +30,8 @@ class HorarioAdmin(admin.ModelAdmin):
 @admin.register(Quadra)
 class QuadraAdmin(admin.ModelAdmin):
     list_display = ['nome']
+
+
+@admin.register(Partida)
+class PartidaAdmin(admin.ModelAdmin):
+    list_display = ['time_casa', 'time_fora']
