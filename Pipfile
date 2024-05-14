@@ -14,6 +14,7 @@ python-decouple = "*"
 flake8 = "*"
 isort = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 flake8 = "*"
