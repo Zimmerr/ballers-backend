@@ -13,6 +13,7 @@ django-cors-headers = "*"
 python-decouple = "*"
 flake8 = "*"
 isort = "*"
+whitenoise = "*"
 
 [dev-packages]
 flake8 = "*"
