@@ -17,6 +17,7 @@ whitenoise = "*"
 gunicorn = "*"
 django-environ = "*"
 psycopg2 = "*"
+dj-database-url = "*"
 
 [dev-packages]
 flake8 = "*"
