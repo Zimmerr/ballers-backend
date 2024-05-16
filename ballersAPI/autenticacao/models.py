@@ -2,6 +2,8 @@ from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 
+from social_core.backends import google
+
 # Create your models here.
 
 
@@ -40,3 +42,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['first_name', 'last_name']
 
     objects = UsuarioManager()
+
+
+class GoogleOAuth2(google.GoogleOAuth2):
+    STATE_PARAMETER = False
