@@ -155,7 +155,7 @@ CORS_ALLOW_CREDENTIALS = True
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'ballersAPI.strategy.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:3000', 'http://127.0.0.1:3000'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:3000', 'http://127.0.0.1:3000', "https://zimmerr.github.io/ballers-frontend/"],
 }
 
 AUTHENTICATION_BACKENDS = (
