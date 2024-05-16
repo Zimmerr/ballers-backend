@@ -165,7 +165,7 @@ DJOSER = {
 
 
 AUTHENTICATION_BACKENDS = (
-    'ballersAPI.autenticacao.models.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend'
 )
 
