@@ -160,6 +160,8 @@ DJOSER = {
                                           'https://zimmerr.github.io/ballers-frontend/'],
 }
 
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend'
