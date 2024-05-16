@@ -153,7 +153,7 @@ CORS_ORIGIN_WHITELIST = [
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_HEADERS = ["Authorization", "Content-Type", "Accept"]
+CORS_ALLOW_HEADERS = ["Authorization", "Content-Type", "Accept", "Cookie"]
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
