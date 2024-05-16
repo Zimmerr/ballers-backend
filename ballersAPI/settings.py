@@ -160,7 +160,8 @@ DJOSER = {
                                           'https://zimmerr.github.io/ballers-frontend/'],
 }
 
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+SOCIAL_AUTH_FIELDS_STORED_IN_SESSION = ['state']
+SESSION_COOKIE_SECURE = False
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
