@@ -152,6 +152,10 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_HEADERS = ["Authorization", "Content-Type", "Accept"]
+CORS_ALLOW_CREDENTIALS = True
+
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'ballersAPI.strategy.TokenStrategy',
@@ -160,8 +164,6 @@ DJOSER = {
                                           'https://zimmerr.github.io/ballers-frontend/'],
 }
 
-SOCIAL_AUTH_FIELDS_STORED_IN_SESSION = ['state']
-SESSION_COOKIE_SECURE = False
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
