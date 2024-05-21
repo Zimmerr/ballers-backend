@@ -17,7 +17,7 @@ class JogadorFactory(DjangoModelFactory):
     nome = Sequence(lambda n: f"{fake.unique.name()}")
     data_nasc = Sequence(lambda n: fake.date(pattern="%Y-%m-%d"))
     cpf = Sequence(lambda n: fake.unique.cpf().replace(".", "").replace("-", ""))
-    altura = Sequence(lambda n: fake.unique.random_int(min=0, max=999))
+    altura = Sequence(lambda n: fake.random_int(min=0, max=999))
 
 
 class TimeFactory(DjangoModelFactory):
