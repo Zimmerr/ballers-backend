@@ -32,4 +32,4 @@ jobs:
         pipenv run isort --check-only .  
     - name: Run Tests
       run: |
-        pipenv run pytest --ballersAPI.settings
+        pipenv run pytest --settings=ballersAPI.settings
