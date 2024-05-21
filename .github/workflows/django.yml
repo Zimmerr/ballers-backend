@@ -32,4 +32,5 @@ jobs:
         pipenv run isort --check-only .  
     - name: Run Tests
       run: |
+        set "DJANGO_SETTINGS_MODULE = ballersAPI.settings"
         pipenv run pytest
