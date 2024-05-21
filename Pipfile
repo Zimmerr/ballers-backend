@@ -18,6 +18,7 @@ gunicorn = "*"
 django-environ = "*"
 psycopg2 = "*"
 dj-database-url = "*"
+coverage = "*"
 
 [dev-packages]
 flake8 = "*"
